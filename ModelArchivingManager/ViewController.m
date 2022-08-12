@@ -34,11 +34,10 @@
     arrayMode.moduleModels = moduleArray;
     arrayMode.moduleOrgModels = orgModuleArray;
     /** 归档 */
-    HomeMoudleManager *manager = [[HomeMoudleManager alloc]init];
-    manager.moudleArrayModel = arrayMode;
-    /** 获取归档数据 */
-    NSArray *moudleArray = manager.moudleArrayModel.moduleModels;//官方
-    NSArray *moudleOrgArray = manager.moudleArrayModel.moduleOrgModels;//原创
+    HomeMoudleManager.share.moudleArrayModel = arrayMode;
+    /** 解档获取数据 */
+    NSArray *moudleArray = HomeMoudleManager.share.moudleArrayModel.moduleModels;//官方
+    NSArray *moudleOrgArray = HomeMoudleManager.share.moudleArrayModel.moduleOrgModels;//原创
     for (HomeModuleModel *model in moudleArray) {
         NSLog(@"官方排序==%@",model.code);
     }
